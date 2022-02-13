@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { creaTarea } from './../modelo/creaTarea';
 import { Observable } from 'rxjs';
 import { Tarea } from './../modelo/tarea';
@@ -10,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class TareaserviceService {
 
   constructor(private http : HttpClient) { }
-  URL : string = 'http://localhost:8080/kanban/api/';
+  URL = environment.URL;
 /*  username= 'camiloleal';
   password='T3CN02020+-+';*/
 

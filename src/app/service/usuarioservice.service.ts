@@ -4,15 +4,15 @@ import { Message} from './../modelo/message';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioserviceService {
-
+URL = environment.URL;
   constructor(private http : HttpClient) { }
-  URL : string = 'http://localhost:8080/kanban/api/';
-  /* username= 'camiloleal';
+   /* username= 'camiloleal';
   password='T3CN02020+-+';
    public login(username:string,password:string){
   const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
