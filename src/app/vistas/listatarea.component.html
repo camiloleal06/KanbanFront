@@ -1,0 +1,36 @@
+<div class="container mt-2">
+  <div class="card">
+    <div class="card-header">
+     <h6>Listado Tareas</h6>
+
+    </div>
+    <div class="card-body">
+      <button class="btn btn-primary" routerLink="/nueva-tarea">
+        <i class="fa-solid fa-circle-plus"></i> Nuevo Tarea
+      </button>
+  <div class="row">
+    <div class="col-md-3 col-sm-6 mt-2" *ngFor="let item of tareas">
+      <div class="card1 card1-block ml-2">
+        <h3 class="card1-title text-right">
+          <i class="material-icons">{{item.title}}</i>
+        </h3>
+        <img
+          src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg"
+          alt="Photo of sunset"/>
+        <h6 class="card1-title mt-3 mb-3">{{item.fullname}} • Responsable </h6>
+        <p class="card1-text">{{ item.description }}.</p>
+      </div>
+      <div class="mt-2 mx-auto">
+      <button class="btn btn-danger"  (click)="borrarTarea(item.id)">
+       <i class="fa-solid fa-trash-can"></i>
+       Eliminar
+      </button>
+      <button class="btn btn-warning">
+        <i class="fa-solid fa-user-pen"></i>
+        Editar
+      </button>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
